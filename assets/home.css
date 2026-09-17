@@ -1,0 +1,461 @@
+/* The home page only. Privacy and Support keep site.css, so they are untouched by this.
+   Everything here is served from this repository: no web fonts, scripts, cookies or trackers. */
+
+@font-face {
+  font-family: "Baloo 2";
+  src: url("fonts/baloo2.ttf") format("truetype-variations");
+  font-weight: 400 800;
+  font-display: swap;
+}
+
+:root {
+  --sky-top: #7EC8EE;
+  --sky-low: #CFEAF7;
+  --sea: #3FA9DC;
+  --sea-deep: #2B86B8;
+  --grass: #8CD07A;
+  --grass-deep: #5FAE58;
+  --sand: #C99A63;
+  --cream: #FFF9E9;
+  --card: #FFFEF9;
+  --ink: #3E2A1B;
+  --quiet: #7A6552;
+  --orange: #FF9A3D;
+  --coral: #FF7A4A;
+  --purple: #8B5FD6;
+  --deep-purple: #4A3A7A;
+  --edge: #F1E3C6;
+  --display: "Baloo 2", "Segoe UI", Roboto, sans-serif;
+  --body: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+a { color: #C2531F; }
+
+h2 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 40px);
+  line-height: 1.15;
+  margin: 0 0 6px;
+  color: var(--deep-purple);
+}
+
+.wrap {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- Top bar, floating over the sky ---- */
+
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 18px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 2px 6px rgba(43, 70, 90, 0.45);
+}
+
+.brand img { border-radius: 10px; }
+
+.topbar nav a {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-left: 6px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--deep-purple);
+  background: rgba(255, 255, 255, 0.85);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+}
+
+.topbar nav a:hover { background: #fff; color: var(--coral); }
+
+/* ---- Hero: the island world ---- */
+
+.hero {
+  position: relative;
+  min-height: 640px;
+  padding: 120px 0 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--sky-top) 0%, var(--sky-low) 62%, #E8F6FB 100%);
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* The title, floating gently out of step, as it does in the game */
+
+.title {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(54px, 13vw, 128px);
+  line-height: 0.95;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.title span {
+  display: inline-block;
+  padding: 0 0.04em;
+}
+
+.word-a {
+  color: #FF8A2B;
+  text-shadow: 0 5px 0 #D2641A, 0 10px 18px rgba(63, 40, 20, 0.28);
+  animation: float-a 4.6s ease-in-out infinite;
+}
+
+.word-b {
+  color: #9A6BE8;
+  text-shadow: 0 5px 0 #6B45A8, 0 10px 18px rgba(40, 30, 70, 0.28);
+  animation: float-b 5.3s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translateY(0) rotate(-1.2deg); }
+  50%      { transform: translateY(-13px) rotate(1.2deg); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translateY(-9px) rotate(1.4deg); }
+  50%      { transform: translateY(4px) rotate(-1deg); }
+}
+
+.tagline {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(19px, 3.2vw, 27px);
+  color: var(--deep-purple);
+  margin: 10px 0 4px;
+}
+
+.count {
+  display: inline-block;
+  margin: 0 0 22px;
+  padding: 7px 20px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  font-weight: 700;
+  color: var(--deep-purple);
+}
+
+/* ---- Buttons ---- */
+
+.button {
+  display: inline-block;
+  padding: 16px 32px;
+  margin: 6px 5px;
+  border-radius: 999px;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 19px;
+  text-decoration: none;
+  color: #fff;
+  background: var(--orange);
+  border-bottom: 5px solid #D2641A;
+  transition: transform 0.12s ease;
+}
+
+.button:hover { background: var(--coral); color: #fff; }
+.button:active { transform: translateY(3px); border-bottom-width: 2px; }
+
+.button.calm {
+  background: #fff;
+  color: var(--deep-purple);
+  border-bottom-color: #C9BBE4;
+}
+
+.button.calm:hover { background: #F5EEFF; color: var(--deep-purple); }
+
+/* Clouds drifting across the sky */
+
+.cloud { animation: drift 46s linear infinite; }
+.c2 { animation-duration: 64s; animation-delay: -18s; }
+.c3 { animation-duration: 82s; animation-delay: -40s; }
+
+@keyframes drift {
+  from { transform: translateX(-180px); }
+  to   { transform: translateX(1620px); }
+}
+
+/* The mascot standing on the home island */
+
+.mascot {
+  display: block;
+  width: clamp(150px, 26vw, 230px);
+  margin: 26px auto -6px;
+  animation: bob 3.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+.eyelid { animation: blink 5.2s infinite; transform-origin: center; }
+
+@keyframes blink {
+  0%, 92%, 100% { transform: scaleY(0); }
+  95%, 97%      { transform: scaleY(1); }
+}
+
+/* ---- Sections ---- */
+
+.band { padding: 66px 0; }
+.band.shore { background: var(--cream); }
+.band.deep { background: linear-gradient(180deg, #E8F6FB 0%, var(--cream) 100%); }
+
+.band header { text-align: center; margin-bottom: 34px; }
+.band header p { color: var(--quiet); margin: 0; font-size: 18px; }
+
+/* ---- Four islands out at sea ---- */
+
+.isles {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.isles li {
+  text-align: center;
+  background: var(--card);
+  border: 3px solid var(--edge);
+  border-radius: 26px;
+  padding: 10px 20px 26px;
+  box-shadow: 0 10px 0 rgba(201, 154, 99, 0.18);
+}
+
+.isles img {
+  display: block;
+  width: 78%;
+  max-width: 210px;
+  height: auto;
+  margin: 0 auto 4px;
+  animation: bob 4.4s ease-in-out infinite;
+}
+
+.isles li:nth-child(2) img { animation-delay: 0.5s; }
+.isles li:nth-child(3) img { animation-delay: 1s; }
+.isles li:nth-child(4) img { animation-delay: 1.5s; }
+
+.isles h3 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 24px;
+  margin: 0 0 4px;
+  color: var(--deep-purple);
+}
+
+.isles p { margin: 0; font-size: 16px; color: var(--quiet); }
+
+.levels {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 14px;
+  border-radius: 999px;
+  background: #FFF1D6;
+  border: 2px solid var(--edge);
+  font-weight: 700;
+  font-size: 14px;
+  color: #A2640F;
+}
+
+/* ---- Video ---- */
+
+.film {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 14px;
+  background: var(--card);
+  border: 3px solid var(--edge);
+  border-radius: 26px;
+  box-shadow: 0 10px 0 rgba(201, 154, 99, 0.18);
+}
+
+.film video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  background: #000;
+}
+
+/* ---- Screenshots: a scroll strip of phones, no scripts ---- */
+
+.strip {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 6px 20px 22px;
+  margin: 0 -20px;
+  list-style: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.strip li {
+  flex: 0 0 auto;
+  width: 220px;
+  scroll-snap-align: center;
+  text-align: center;
+}
+
+.phone {
+  padding: 9px;
+  background: #3E2A1B;
+  border-radius: 26px;
+  box-shadow: 0 8px 18px rgba(62, 42, 27, 0.28);
+}
+
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: var(--cream);
+}
+
+.strip span {
+  display: block;
+  margin-top: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--quiet);
+}
+
+.hint { text-align: center; color: var(--quiet); font-size: 15px; margin: 0; }
+
+/* ---- Promises ---- */
+
+.promises {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.promises li {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  background: var(--card);
+  border: 3px solid var(--edge);
+  border-radius: 20px;
+  padding: 18px 20px;
+}
+
+.promises b { display: block; font-size: 17px; }
+.promises span { color: var(--quiet); font-size: 15.5px; }
+
+.tick {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  margin-top: 3px;
+}
+
+/* ---- Footer ---- */
+
+.foot {
+  background: var(--deep-purple);
+  color: #D9CFF2;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.foot a { color: #FFC98A; }
+.foot p { margin: 6px 0; font-size: 15px; }
+.foot .links { margin-bottom: 14px; }
+
+.foot .links a {
+  display: inline-block;
+  margin: 0 10px;
+  padding: 9px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.foot .links a:hover { background: rgba(255, 255, 255, 0.26); }
+
+/* ---- Smaller screens ---- */
+
+@media (max-width: 700px) {
+  .hero { min-height: 560px; padding-top: 100px; }
+  .topbar { padding: 14px 16px; flex-wrap: nowrap; }
+  .brand { font-size: 19px; }
+  .topbar nav { white-space: nowrap; }
+  .topbar nav a { padding: 9px 14px; margin-left: 4px; font-size: 15px; }
+  .count { font-size: 15px; padding: 6px 16px; }
+  .band { padding: 48px 0; }
+}
+
+/* Narrow phones: the icon carries the brand on its own, so the two
+   navigation buttons stay on one line instead of folding into the title. */
+
+@media (max-width: 460px) {
+  .brand-name { display: none; }
+}
+
+/* ---- Anyone who would rather things held still ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .word-a, .word-b, .mascot, .isles img, .eyelid, .cloud, .wave {
+    animation: none;
+  }
+  .word-a, .word-b { transform: none; }
+}
