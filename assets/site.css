@@ -1,0 +1,143 @@
+/* PuzzleCrave site. No web fonts and no scripts, so the pages load nothing from anywhere else. */
+
+:root {
+  --cream: #FFF9E9;
+  --card: #FFFEF9;
+  --ink: #3E2A1B;
+  --quiet: #7A6552;
+  --orange: #FF9A3D;
+  --coral: #FF7A4A;
+  --purple: #8B5FD6;
+  --sky: #BFE3F2;
+  --edge: #F1E3C6;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+a { color: #C2531F; }
+a:hover { color: var(--coral); }
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--card);
+  border-bottom: 3px solid var(--edge);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.brand img { border-radius: 10px; }
+
+.bar nav a {
+  display: inline-block;
+  padding: 10px 16px;
+  margin-left: 4px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  background: var(--cream);
+  border: 2px solid var(--edge);
+  color: var(--ink);
+}
+
+.bar nav a:hover { background: var(--sky); }
+
+.sheet, .hero, .foot {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 28px 20px;
+}
+
+.sheet {
+  background: var(--card);
+  border: 2px solid var(--edge);
+  border-radius: 22px;
+  margin: 28px auto;
+  padding: 28px 32px 36px;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+}
+
+h2 {
+  font-size: 22px;
+  margin: 32px 0 8px;
+  color: #8A4A18;
+}
+
+.hero h1 { font-size: 40px; }
+
+.lede { font-size: 20px; color: var(--quiet); }
+
+ul { padding-left: 22px; }
+li { margin: 6px 0; }
+
+.games {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.games li {
+  background: var(--card);
+  border: 2px solid var(--edge);
+  border-radius: 18px;
+  padding: 16px 18px;
+  margin: 0;
+}
+
+.games strong { display: block; font-size: 18px; }
+
+.button {
+  display: inline-block;
+  padding: 14px 26px;
+  margin: 6px 8px 6px 0;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 4px solid #D97A22;
+}
+
+.button:hover { background: var(--coral); color: #fff; }
+
+.foot {
+  border-top: 3px solid var(--edge);
+  color: var(--quiet);
+  font-size: 15px;
+}
+
+.quiet { color: var(--quiet); font-size: 15px; }
+
+@media (max-width: 600px) {
+  .sheet { padding: 20px; border-radius: 16px; margin: 16px; }
+  h1 { font-size: 28px; }
+  .hero h1 { font-size: 32px; }
+}
