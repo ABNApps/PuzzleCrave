@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PuzzleCrave: Brain Games (version 1.1.0)</title>
+<meta name="description" content="PuzzleCrave 1.1.0: seven brain games, 500 levels, with a daily puzzle. No ads, no in-app purchases, plays offline.">
+<link rel="icon" href="assets/icon.png">
+<link rel="stylesheet" href="assets/home.css">
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="40" height="40"> <span class="brand-name">PuzzleCrave</span></a>
+  <nav>
+    <a href="../privacy.html">Privacy</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <!-- The island world the game opens on: sky, sun, clouds, sea and hills. -->
+  <svg class="scene" viewBox="0 0 1440 640" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+    <defs>
+      <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+        <stop offset="60%" stop-color="#FFE39A" stop-opacity="0.45"/>
+        <stop offset="100%" stop-color="#FFE39A" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="seaFill" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#5FBEE8"/>
+        <stop offset="100%" stop-color="#2B86B8"/>
+      </linearGradient>
+      <linearGradient id="hillNear" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#8CD07A"/>
+        <stop offset="100%" stop-color="#5FAE58"/>
+      </linearGradient>
+      <linearGradient id="hillFar" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#B6E3A4"/>
+        <stop offset="100%" stop-color="#8CCB7C"/>
+      </linearGradient>
+    </defs>
+
+    <circle cx="205" cy="128" r="150" fill="url(#sunGlow)"/>
+    <circle cx="205" cy="128" r="62" fill="#FFF0AE"/>
+
+    <g fill="#FFFFFF" opacity="0.82">
+      <g class="cloud c1">
+        <ellipse cx="430" cy="112" rx="66" ry="30"/>
+        <ellipse cx="482" cy="120" rx="52" ry="24"/>
+        <ellipse cx="386" cy="124" rx="46" ry="21"/>
+      </g>
+      <g class="cloud c2" opacity="0.66">
+        <ellipse cx="1080" cy="84" rx="54" ry="25"/>
+        <ellipse cx="1126" cy="92" rx="43" ry="20"/>
+        <ellipse cx="1042" cy="95" rx="38" ry="17"/>
+      </g>
+      <g class="cloud c3" opacity="0.5">
+        <ellipse cx="820" cy="176" rx="44" ry="19"/>
+        <ellipse cx="856" cy="182" rx="34" ry="15"/>
+      </g>
+    </g>
+
+    <path d="M0 430 Q 240 402 480 430 T 960 430 T 1440 424 V640 H0 Z" fill="url(#seaFill)"/>
+    <path d="M0 452 Q 180 438 360 452 T 720 452 T 1080 452 T 1440 452 V500 H0 Z" fill="#FFFFFF" opacity="0.2"/>
+    <path d="M0 486 Q 200 470 400 486 T 800 486 T 1200 486 T 1440 480 V540 H0 Z" fill="#FFFFFF" opacity="0.14"/>
+
+    <path d="M0 520 Q 300 470 600 512 T 1180 500 T 1440 520 V640 H0 Z" fill="url(#hillFar)"/>
+    <path d="M0 572 Q 260 524 560 566 T 1120 556 T 1440 578 V640 H0 Z" fill="url(#hillNear)"/>
+  </svg>
+
+  <div class="wrap">
+    <!-- Each version of the app has its own self-contained page; this one is 1.1.0. -->
+    <nav class="versions" aria-label="App version">
+      <a href="../index.html">Version 2.0.0 <small>Coming soon</small></a>
+      <a href="index.html" aria-current="page">Version 1.1.0 <small>On Google Play now</small></a>
+    </nav>
+
+    <h1 class="title"><span class="word-a">Puzzle</span><span class="word-b">Crave</span></h1>
+    <p class="tagline">Puzzles for curious minds</p>
+    <p class="count">Seven games &middot; 500 levels &middot; no ads, ever</p>
+
+    <p>
+      <a class="button" href="#games">Meet the games</a>
+      <a class="button calm" href="#film">Watch it play</a>
+    </p>
+
+    <!-- The mascot, bobbing and blinking as it does on the game's home screen. -->
+    <svg class="mascot" viewBox="0 0 220 220" role="img" aria-label="The PuzzleCrave mascot, a smiling orange puzzle piece.">
+      <defs>
+        <linearGradient id="piece" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFA75C"/>
+          <stop offset="100%" stop-color="#F07A22"/>
+        </linearGradient>
+      </defs>
+      <ellipse cx="110" cy="200" rx="56" ry="10" fill="#3E2A1B" opacity="0.16"/>
+      <path d="M64 50 H92 A18 18 0 0 1 128 50 H156 A14 14 0 0 1 170 64 V92 A18 18 0 0 1 170 128 V156
+               A14 14 0 0 1 156 170 H128 A18 18 0 0 0 92 170 H64 A14 14 0 0 1 50 156 V128
+               A18 18 0 0 0 50 92 V64 A14 14 0 0 1 64 50 Z"
+            fill="url(#piece)" stroke="#C85A15" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M72 70 q22 -9 44 -3" stroke="#FFD2A8" stroke-width="10" stroke-linecap="round" fill="none" opacity="0.8"/>
+      <ellipse cx="92" cy="108" rx="14" ry="15" fill="#FFFFFF"/>
+      <ellipse cx="132" cy="108" rx="14" ry="15" fill="#FFFFFF"/>
+      <circle cx="94" cy="110" r="7.5" fill="#3B3550"/>
+      <circle cx="134" cy="110" r="7.5" fill="#3B3550"/>
+      <circle cx="91" cy="106" r="3" fill="#FFFFFF"/>
+      <circle cx="131" cy="106" r="3" fill="#FFFFFF"/>
+      <g class="eyelid">
+        <ellipse cx="92" cy="108" rx="15" ry="16" fill="#F7954B"/>
+        <ellipse cx="132" cy="108" rx="15" ry="16" fill="#F7954B"/>
+      </g>
+      <ellipse cx="72" cy="132" rx="10" ry="6" fill="#F2705B" opacity="0.5"/>
+      <ellipse cx="152" cy="132" rx="10" ry="6" fill="#F2705B" opacity="0.5"/>
+      <path d="M99 134 q13 13 26 0" stroke="#C85A15" stroke-width="6" stroke-linecap="round" fill="none"/>
+    </svg>
+  </div>
+</section>
+
+<section class="band shore" id="games">
+  <div class="wrap">
+    <header>
+      <h2>Seven games, 500 levels</h2>
+      <p>Every one is a whole game, and five of them have a new puzzle every day.</p>
+    </header>
+
+    <ul class="isles">
+      <li>
+        <img src="assets/isles/workshop.png" alt="" loading="lazy">
+        <h3>Sliding Puzzle</h3>
+        <p>Slide tiles back into order on a wooden board, and rebuild 30 pictures. Boards grow from 3x3 to a giant 6x6.</p>
+        <span class="levels">70 levels</span>
+      </li>
+      <li>
+        <img src="assets/isles/ferry.png" alt="" loading="lazy">
+        <h3>River Crossing</h3>
+        <p>Get everyone safely across. The tiger cannot be left alone with the goat, so think before you row.</p>
+        <span class="levels">80 levels</span>
+      </li>
+      <li>
+        <img src="assets/isles/tower.png" alt="" loading="lazy">
+        <h3>Tower Trails</h3>
+        <p>A Towers of Hanoi adventure through six worlds, each with its own melody and companion.</p>
+        <span class="levels">70 levels</span>
+      </li>
+      <li>
+        <img src="assets/isles/arena.png" alt="" loading="lazy">
+        <h3>Magnet Zing!</h3>
+        <p>Place your magnets inside the rope without letting them snap together. Robots, friends, or solo.</p>
+        <span class="levels">70 levels</span>
+      </li>
+      <li class="plain">
+        <h3>Traffic Escape</h3>
+        <p>Clear a jammed car park. Tap a car and it drives the way its nose points; if something is in the way, it bumps and rolls back.</p>
+        <span class="levels">70 levels</span>
+      </li>
+      <li class="plain">
+        <h3>Path Escape</h3>
+        <p>Friendly snakes are tangled on the grass. Tap one and it slides out along its own body, head first.</p>
+        <span class="levels">70 levels</span>
+      </li>
+      <li class="plain">
+        <h3>Queue Escape</h3>
+        <p>Get every passenger aboard, one color at a time. Fill every waiting spot and you are boxed in, so plan ahead.</p>
+        <span class="levels">70 levels</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="band deep" id="film">
+  <div class="wrap">
+    <header>
+      <h2>See it moving</h2>
+      <p>A minute of play, with no sound.</p>
+    </header>
+
+    <div class="film">
+      <video controls preload="none" poster="assets/video/promo-poster.jpg" width="1280" height="720">
+        <source src="assets/video/promo.mp4" type="video/mp4">
+        Your browser cannot play this video. <a href="assets/video/promo.mp4">Download it instead.</a>
+      </video>
+    </div>
+  </div>
+</section>
+
+<section class="band shore">
+  <div class="wrap">
+    <header>
+      <h2>A look inside</h2>
+      <p>Shown on a phone. Every screen works in landscape too, and on tablets.</p>
+    </header>
+
+    <ul class="strip">
+      <li><div class="phone"><img src="assets/shots/01-home.jpg" width="540" height="960" loading="lazy" alt="The home screen: an island world with rows of game tiles over the sea."></div><span>Your island home</span></li>
+      <li><div class="phone"><img src="assets/shots/02-sliding-warmup.jpg" width="540" height="960" loading="lazy" alt="A numbered sliding puzzle warm-up on a wooden board."></div><span>Gentle warm-ups</span></li>
+      <li><div class="phone"><img src="assets/shots/03-sliding-picture.jpg" width="540" height="960" loading="lazy" alt="A picture sliding puzzle being rebuilt tile by tile."></div><span>30 pictures</span></li>
+      <li><div class="phone"><img src="assets/shots/04-river-crossing.jpg" width="540" height="960" loading="lazy" alt="River Crossing: characters waiting on the bank beside a boat."></div><span>River Crossing</span></li>
+      <li><div class="phone"><img src="assets/shots/05-tower-trails.jpg" width="540" height="960" loading="lazy" alt="Tower Trails: a tower of coloured disks with a companion watching."></div><span>Tower Trails</span></li>
+      <li><div class="phone"><img src="assets/shots/06-magnet-zing.jpg" width="540" height="960" loading="lazy" alt="Magnet Zing!: magnets with faces placed inside a candy-striped rope."></div><span>Magnet Zing!</span></li>
+      <li><div class="phone"><img src="assets/shots/07-name-builder.jpg" width="540" height="960" loading="lazy" alt="The name builder, choosing a funny name from word lists."></div><span>Pick a funny name</span></li>
+      <li><div class="phone"><img src="assets/shots/08-leaderboard.jpg" width="540" height="960" loading="lazy" alt="The Daily Leaderboard listing today's solves by the players on this phone."></div><span>Daily Leaderboard</span></li>
+    </ul>
+    <p class="hint">Scroll sideways for more &rarr;</p>
+  </div>
+</section>
+
+<section class="band deep">
+  <div class="wrap">
+    <header>
+      <h2>Safe by design</h2>
+      <p>Built for players of every age, and for the grown-ups who hand over the phone.</p>
+    </header>
+
+    <ul class="promises">
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>No ads, no purchases</b><span>Nothing to buy, and nothing interrupting play.</span></div>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Nothing collected</b><span>No accounts, no sign-up, nothing to type. Everything stays on the device.</span></div>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Plays offline</b><span>No internet needed, anywhere, at any time.</span></div>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Six players, one phone</b><span>Each with a funny name, an animal icon, and their own progress.</span></div>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Never stuck</b><span>Free hints and unlimited undo on every puzzle.</span></div>
+      </li>
+      <li>
+        <svg class="tick" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#8CD07A"/><path d="M7 12.5l3.2 3.3L17 9" stroke="#fff" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><b>Quiet when you need it</b><span>Music, sound effects and vibration each switch off.</span></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<footer class="foot">
+  <p class="links">
+    <a href="../privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+  </p>
+  <p>PuzzleCrave is published on Google Play by Gaddam Vikram (ABN Apps).</p>
+  <p>Questions? <a href="mailto:abnapps2026@gmail.com">abnapps2026@gmail.com</a></p>
+  <p>This page loads no fonts, scripts, cookies, or trackers from anywhere else.</p>
+</footer>
+
+</body>
+</html>
